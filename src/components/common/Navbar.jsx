@@ -10,6 +10,9 @@ import {
 } from "react-icons/fa";
 import { useCart } from "../../context/CartContext";
 
+// ✅ Logo import (make sure file exists)
+import Logo from "../../assets/logo.png";
+
 const Navbar = () => {
   const { cart } = useCart();
 
@@ -90,13 +93,53 @@ const Navbar = () => {
       <div className="backdrop-blur-xl bg-white/70 border-b border-white/30 shadow-[0_10px_30px_-20px_rgba(0,0,0,0.35)]">
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="h-16 flex items-center justify-between gap-3">
-            {/* Brand */}
-            <Link to="/" className="flex items-center gap-2">
-              <span className="w-9 h-9 rounded-2xl bg-gradient-to-tr from-orange-500 to-amber-400 shadow-md shadow-orange-500/20" />
-              <span className="text-xl font-extrabold tracking-tight text-slate-900">
-                Foodie<span className="text-orange-500">.</span>
-              </span>
-            </Link>
+            {/* ✅ Brand with LOGO */}
+            <Link to="/" className="flex items-center gap-3 group">
+  {/* Logo */}
+  <div className="relative">
+    {/* glow ring */}
+    <div className="absolute -inset-1 rounded-[22px] bg-gradient-to-r from-orange-400/40 to-amber-300/40 blur-md opacity-60 group-hover:opacity-100 transition" />
+
+    {/* logo box */}
+    <div
+      className="relative h-11 w-11 rounded-2xl overflow-hidden ring-1 ring-slate-200 bg-white shadow-sm
+                 transition duration-300
+                 group-hover:-translate-y-0.5 group-hover:shadow-lg"
+    >
+      <img
+        src={Logo}
+        alt="Foodie App Logo"
+        className="h-full w-full object-cover
+                   transition duration-500
+                   group-hover:scale-110"
+      />
+    </div>
+
+    {/* small ping dot */}
+    <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-orange-500 animate-ping opacity-30" />
+    <span className="absolute -top-1 -right-1 h-3 w-3 rounded-full bg-orange-500" />
+  </div>
+
+  {/* Text */}
+  <div className="leading-tight">
+    <span
+      className="block text-lg sm:text-xl font-extrabold tracking-tight
+                 text-slate-900"
+    >
+      Foodie
+      <span
+        className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-amber-400
+                   inline-block group-hover:animate-[pulse_1.2s_ease-in-out_infinite]"
+      >
+        .
+      </span>
+    </span>
+
+    <span className="block text-[11px] font-semibold text-slate-500 -mt-0.5">
+      Taste the best
+    </span>
+  </div>
+</Link>
 
             {/* Desktop links */}
             <div className="hidden lg:flex items-center gap-2">
