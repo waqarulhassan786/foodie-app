@@ -12,12 +12,12 @@ import {
 
 const categories = [
   { id: "all", name: "All Foods", icon: <FaUtensils /> },
-  { id: "1", name: "Pizza", icon: <FaFireAlt /> },
-  { id: "2", name: "Burgers", icon: <FaFireAlt /> },
-  { id: "3", name: "Pasta", icon: <FaUtensils /> },
-  { id: "4", name: "Sushi", icon: <FaLeaf /> },
-  { id: "5", name: "Desserts", icon: <FaIceCream /> },
-  { id: "6", name: "Salads", icon: <FaLeaf /> },
+  { id: "pizza", name: "Pizza", icon: <FaFireAlt /> },
+  { id: "burgers", name: "Burgers", icon: <FaFireAlt /> },
+  { id: "pasta", name: "Pasta", icon: <FaUtensils /> },
+  { id: "sushi", name: "Sushi", icon: <FaLeaf /> },
+  { id: "desserts", name: "Desserts", icon: <FaIceCream /> },
+  { id: "salads", name: "Salads", icon: <FaLeaf /> },
 ];
 
 const MenuLayout = () => {

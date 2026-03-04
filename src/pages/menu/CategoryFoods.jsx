@@ -59,7 +59,7 @@ export default function CategoryFoods() {
             to="/menu"
             className="bg-black text-white px-6 py-3 rounded-lg"
           >
-            Back To Menu
+            
           </Link>
         </div>
       </div>
