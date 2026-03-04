@@ -1,4 +1,5 @@
 import React, { lazy, Suspense } from "react";
+import Logo from "../public/logo.png";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Loader from "./components/common/Loader";
 const AdminDashboard = lazy(() => import("./pages/user/AdminDashboard"))
@@ -37,6 +38,7 @@ const Login = lazy(() => import("./pages/Auth/Login"))
 const Signup = lazy(() => import("./pages/Auth/Signup"))
 const router = createBrowserRouter([
 
+  
    {
     path: "/",
     element: <MainLayout />,
@@ -85,13 +87,16 @@ const router = createBrowserRouter([
       },
     ],
   },
+  
 ]);
 
 function App() {
   return (
     <Suspense fallback={<Loader />}>
       <RouterProvider router={router} />
+      
     </Suspense>
+    
   );
 }
 
